@@ -1,0 +1,18 @@
+##########
+# Downloads & compiles create-react-app, saving built app to shared volume.
+# The produced static files will be served by nginx proxy from the shared volume.
+# This prod variant of ui container will not be running permanently but is only used for building.
+###########
+
+FROM node:12
+
+WORKDIR /app
+
+COPY demo-app/ .
+
+WORKDIR demo-app
+
+RUN yarn
+
+RUN yarn build
+
