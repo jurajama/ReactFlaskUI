@@ -1,10 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Alert } from 'reactstrap';
 
 function App() {
   return (
     <div className="App">
+      <Alert color="primary">
+        This is Alert banner from reactstrap.
+      </Alert>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

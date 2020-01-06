@@ -6,8 +6,6 @@ services:
             dockerfile: Dockerfile.dev
         networks:
             - web_nw
-        volumes:
-            -  static-ui-content:/app/build
         restart: always
     api:
         build:
@@ -22,8 +20,6 @@ services:
         build:
             context: proxy
             dockerfile: Dockerfile.dev
-        volumes:
-            -  static-ui-content:/ui
         depends_on:
             - ui
             - api
@@ -35,5 +31,3 @@ services:
 networks:
     web_nw:
         driver: bridge
-volumes:
-    static-ui-content:
