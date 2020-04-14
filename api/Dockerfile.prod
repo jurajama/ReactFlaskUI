@@ -15,4 +15,4 @@ COPY src/ .
 
 # Use gunicorn to server flask app, not flask's dev/test server
 EXPOSE 5090
-CMD ["gunicorn", "--bind", "0.0.0.0:5090", "application:create_app('config')"]
+CMD ["gunicorn", "--chdir", "/app", "--bind", "0.0.0.0:5090", "application:create_app('config')"]
